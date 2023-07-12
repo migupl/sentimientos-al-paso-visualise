@@ -1,6 +1,6 @@
 window.onload = _ => {
     const fetchJSON = async () => {
-        const response = await fetch('../assets/sentiments_by_district_geo.json');
+        const response = await fetch('../notebooks/output/sentiments_by_district_geo.json');
         const data = await response.json();
         return data
     }
