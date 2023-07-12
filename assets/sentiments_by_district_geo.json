@@ -1,0 +1,24 @@
+{
+    "Arganzuela": {
+        "type": "FeatureCollection",
+        "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [
+                        -3.71829,
+                        40.4105593
+                    ]
+                },
+                "properties": {
+                    "popupContent": "<strong>Seré blanca escucha, la sombra tras los pasos vivos de mi muerte</strong><br>— <cite>David Trashumante</cite>",
+                    "icon": {
+                        "iconUrl": "https://raw.githubusercontent.com/migupl/svg-vectors-and-icons/main/heart-like/heart-green.png",
+                        "iconSize": [41, 41],
+                        "iconAnchor": [20, 41],
+                        "popupAnchor": [1, -34]
+                    }
+                }
+        }]
+    }
+}
