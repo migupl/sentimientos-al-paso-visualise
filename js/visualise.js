@@ -10,11 +10,13 @@ window.onload = _ => {
 
         Object.keys(data).forEach(key => {
             const features = data[key];
-            map.dispatchEvent(new CustomEvent('x-leaflet-map-geojson-add', {
-                detail: {
-                    geojson: features
-                }
-            }));
+            setTimeout(() => {
+                map.dispatchEvent(new CustomEvent('x-leaflet-map-geojson-add', {
+                    detail: {
+                        geojson: features
+                    }
+                }))
+            }, 200)
         })
     })
 }
