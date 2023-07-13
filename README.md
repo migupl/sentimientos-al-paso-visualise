@@ -1,6 +1,6 @@
 # Visualiza 'sentimientos al paso'
 
-Mapa de los '[sentimientos al paso](https://github.com/migupl/sentimientos-al-paso)'[^1] que resume la siguiente tabla
+Mapa de los '[sentimientos al paso](https://github.com/migupl/sentimientos-al-paso)[^1]' que resume la siguiente tabla
 
 | district              | negative | neutral | positive |
 | --------------------- | -------- | ------- | -------- |
@@ -26,17 +26,19 @@ Mapa de los '[sentimientos al paso](https://github.com/migupl/sentimientos-al-pa
 | Villa de Vallecas     | 1        | 0       | 11       |
 | Villaverde            | 1        | 2       | 30       |
 
-Se usará el Web Component [vanilla-js-web-component-leaflet-geojson ](https://github.com/migupl/vanilla-js-web-component-leaflet-geojson) y la craga de los puntos mediante la generación de [GeoJSON](https://geojson.org/) FeatureCollection por distrito.
+Se usará el Web Component [vanilla-js-web-component-leaflet-geojson ](https://github.com/migupl/vanilla-js-web-component-leaflet-geojson) y la carga de los puntos mediante la generación de [GeoJSON](https://geojson.org/) '[FeatureCollection](https://datatracker.ietf.org/doc/html/rfc7946#section-3.3)' por distrito.
 
-Para la generación de los puntos nos valdremos del cuaderno Jupyter '[Map visualisation](./docs/Map%20visualisation.pdf)' que transformará el fichero CSV [[versosalpaso_sentiment_text-davinci-003_geo.csv](https://github.com/migupl/sentimientos-al-paso/raw/main/notebooks/output/versosalpaso_sentiment_text-davinci-003_geo.csv) en una estructura JSON distrito:FeatureCollection.
+Para la generación de las '[Feature](https://datatracker.ietf.org/doc/html/rfc7946#section-3.2)' nos valdremos del cuaderno Jupyter '[Map visualisation](./docs/Map%20visualisation.pdf)' que transformará el fichero CSV [versosalpaso_sentiment_text-davinci-003_geo.csv](https://github.com/migupl/sentimientos-al-paso/raw/main/notebooks/output/versosalpaso_sentiment_text-davinci-003_geo.csv) [en un fichero JavaScript](./notebooks/output/sentiments_by_district_geo.js) con un objeto JSON distrito:FeatureCollection.
 
-El mapa resultante
+Se obtiene un mapa como el siguiente
 
 ![Mapa de 'sentimientos al paso' de Madrid](./docs/sentimientos-al-paso.jpg)
 
-permite interaccionar mostrando mayores niveles de detalle
+que permite interaccionar mostrando mayores niveles de detalle
 
 ![Villaverde Bajo - 'sentimientos al paso'](./docs/sentimientos-al-paso-detalle.jpg)
+
+y muestra haciendo *click* en el corazón tanto el 'verso al paso' como su autor.
 
 # Stack a utilizar para el cuaderno Jupyter
 
@@ -45,7 +47,7 @@ Para el análisis de sentimientos se utilizó un stack Python para la ejecución
 Para ejecutar el contenedor en modo interactivo[^2] se puede usar
 
 ```bash
-$ docker run -it -p 888:8888 --name jupy-sentimiento-versos-visualise -v "$PWD/notebooks":/home/jovyan jupyter/minimal-notebook:latest
+$ docker run -it -p 8889:8888 --name jupy-sentimiento-versos-visualise -v "$PWD/notebooks":/home/jovyan jupyter/minimal-notebook:latest
 Entered start.sh with args: jupyter lab
 Executing the command: jupyter lab
 ...
@@ -57,7 +59,7 @@ Executing the command: jupyter lab
 
 ```
 
-Se debe tener en cuenta que el mensaje disponbilidad del entorno siempre muestra el puerto 8888 ya que este es el mensaje interno al contenedor. Para la interacción desde el navegador lo substituiremos por el definido en el arranque del contenedor que para este caso sería *http://127.0.0.1:**8889**/lab?token=cd4244c9cf09993eaf6edea2b65540e242db9444847dbbe4*.
+Se debe tener en cuenta que el mensaje disponbilidad del entorno **siempre muestra el puerto 8888** ya que este es el mensaje interno al contenedor. Para la interacción desde el navegador lo substituiremos por el definido en el arranque del contenedor que para este caso sería *http://127.0.0.1:**8889**/lab?token=cd4244c9cf09993eaf6edea2b65540e242db9444847dbbe4*.
 
 Pulsando 'Ctrl-C' dos veces se para la ejecución del contenedor pero deja intacto este en disco para un posterior rearranque
 
