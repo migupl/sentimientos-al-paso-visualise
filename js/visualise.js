@@ -18,4 +18,5 @@ window.onload = _ => {
     })
 
     loadMessage.textContent = 'Se han cargado todos los distritos'
+    loadMessage.classList.add('fade-in-image')
 }
