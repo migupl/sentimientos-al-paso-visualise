@@ -19,4 +19,9 @@ window.onload = _ => {
 
     loadMessage.textContent = 'Se han cargado todos los distritos'
     loadMessage.classList.add('fade-in-image')
+
+    setTimeout(() => {
+        loadMessage.remove()
+    }, 5500)
+
 }
