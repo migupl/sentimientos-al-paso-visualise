@@ -4,6 +4,7 @@ window.onload = _ => {
     const map = document.querySelector('leaflet-map');
 
     const loadMessage = document.getElementsByClassName('load-message')[0];
+    loadMessage.style.display = 'block';
 
     Object.keys(data).forEach(key => {
         const features = data[key];
