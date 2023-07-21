@@ -1,30 +1,6 @@
 # Visualiza 'sentimientos al paso'
 
-Mapa de los '[sentimientos al paso](https://github.com/migupl/sentimientos-al-paso)[^1]' que resume la siguiente tabla
-
-| district              | negative | neutral | positive |
-| --------------------- | -------- | ------- | -------- |
-| Arganzuela            | 1        | 4       | 48       |
-| Barajas               | 0        | 0       | 11       |
-| Carabanchel           | 2        | 7       | 72       |
-| Centro                | 1        | 2       | 67       |
-| Chamartín             | 0        | 4       | 71       |
-| Chamberí              | 1        | 0       | 63       |
-| Ciudad Lineal         | 0        | 1       | 77       |
-| Fuencarral-El Pardo   | 2        | 4       | 59       |
-| Hortaleza             | 0        | 5       | 51       |
-| Latina                | 1        | 7       | 67       |
-| Moncloa-Aravaca       | 3        | 2       | 58       |
-| Moratalaz             | 0        | 1       | 30       |
-| Puente de Vallecas    | 0        | 5       | 53       |
-| Retiro                | 1        | 1       | 45       |
-| Salamanca             | 1        | 3       | 59       |
-| San Blas - Canillejas | 1        | 1       | 51       |
-| Tetuán                | 2        | 2       | 39       |
-| Usera                 | 0        | 4       | 42       |
-| Vicálvaro             | 0        | 1       | 22       |
-| Villa de Vallecas     | 1        | 0       | 11       |
-| Villaverde            | 1        | 2       | 30       |
+Representación en un mapa de los resultados de '[sentimientos al paso](https://github.com/migupl/sentimientos-al-paso)[^1]' donde se explora el sentimiento asociado a los 'versos' que acompañan a los viandantes en muchos de los pasos de cebra de Madrid.
 
 Se usará el Web Component [vanilla-js-web-component-leaflet-geojson ](https://github.com/migupl/vanilla-js-web-component-leaflet-geojson) y la carga de los puntos mediante la generación de [GeoJSON](https://geojson.org/) '[FeatureCollection](https://datatracker.ietf.org/doc/html/rfc7946#section-3.3)' por distrito.
 
@@ -40,7 +16,7 @@ que permite interaccionar mostrando mayores niveles de detalle
 
 y muestra haciendo *click* en el corazón tanto el 'verso al paso' como su autor.
 
-# Stack a utilizar para el cuaderno Jupyter
+## Stack a utilizar para el cuaderno Jupyter
 
 Para el análisis de sentimientos se utilizó un stack Python para la ejecución de Cuadernos Jupyter. Más concretamente la imagen [jupyter/minimal-notebook](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html#jupyter-minimal-notebook) ejecutado como un contenedor con [Docker CLI](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/running.html).
 
